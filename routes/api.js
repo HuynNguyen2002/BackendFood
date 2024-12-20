@@ -7,6 +7,7 @@ const { getAllCom, addCom, getComById, updateCom, deleteCom} = require('../contr
 const { getAllHaisan, getHaisanById, addHaisan, updateHaisan, deleteHaisan} = require('../controller/haisan');
 const { getAllGaboHeo, getGaboHeoById, createGaboHeo, deleteGaboHeo, updateGaboHeo } = require('../controller/gaboheo');
 const {getAllMonSoi, getMonSoiById, deleteMonSoi, addMonSoi, updateMonSoi} = require('../controller/monsoiController');
+const { addDish, updateDish, deleteDish, getDishes, getDishToday, addDishToday, deleteDishToday } = require('../controller/DishController');
 
 // Route để thêm một tài liệu mới vào một collection
 router.post('/add', firestoreController.addDocument);
@@ -52,5 +53,15 @@ router.get('/monsoi/:id', getMonSoiById);
 router.post('/monsoi', addMonSoi);
 router.put('/monsoi/:id', updateMonSoi);
 router.delete('/monsoi/:id', deleteMonSoi);
+
+
+router.post('/addDish', addDish);
+router.put('/updateDish/:id', updateDish);
+router.delete('/deleteDish/:id', deleteDish);
+router.get('/getDish', getDishes);
+
+router.get('/getDishToday', getDishToday);
+router.post('/addDishToday', addDishToday);
+router.delete('/deleteDishToday/:id', deleteDishToday);s
 
 module.exports = router;
